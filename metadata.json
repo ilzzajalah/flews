@@ -1,0 +1,6 @@
+{
+  "name": "Flews Motion",
+  "description": "Editor motion graphics dan video berbasis keyframe dengan timeline multi-track, efek visual, dan sinkronisasi proyek cloud.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

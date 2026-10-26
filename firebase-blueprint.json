@@ -1,0 +1,80 @@
+{
+  "entities": {
+    "Project": {
+      "title": "Project",
+      "description": "Motion graphics project for Flews Motion editor containing canvas configurations and serialized timeline layers.",
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string",
+          "description": "Unique identifier of the project document."
+        },
+        "userId": {
+          "type": "string",
+          "description": "Firebase Auth UID of the owner."
+        },
+        "name": {
+          "type": "string",
+          "description": "User assigned title of the motion project."
+        },
+        "aspectRatio": {
+          "type": "string",
+          "description": "Aspect ratio tag, such as 1:1, 4:5, 9:16, 16:9, 4:3, 21:9, custom."
+        },
+        "width": {
+          "type": "integer",
+          "description": "Canvas width in pixels."
+        },
+        "height": {
+          "type": "integer",
+          "description": "Canvas height in pixels."
+        },
+        "fps": {
+          "type": "integer",
+          "description": "Frame rate (e.g. 24, 30, 60)."
+        },
+        "durationMs": {
+          "type": "integer",
+          "description": "Duration of project in milliseconds."
+        },
+        "backgroundColor": {
+          "type": "string",
+          "description": "Hex color code for canvas background."
+        },
+        "layersJson": {
+          "type": "string",
+          "description": "JSON serialized timeline layers with keyframes, effects, null objects, text and shapes."
+        },
+        "createdAt": {
+          "type": "string",
+          "format": "date-time",
+          "description": "Creation timestamp. Clients must submit FieldValue.serverTimestamp()."
+        },
+        "updatedAt": {
+          "type": "string",
+          "format": "date-time",
+          "description": "Last update timestamp. Clients must submit FieldValue.serverTimestamp()."
+        }
+      },
+      "required": [
+        "userId",
+        "name",
+        "aspectRatio",
+        "width",
+        "height",
+        "fps",
+        "durationMs",
+        "backgroundColor",
+        "layersJson",
+        "createdAt",
+        "updatedAt"
+      ]
+    }
+  },
+  "firestore": {
+    "/users/{userId}/projects/{projectId}": {
+      "schema": "Project",
+      "description": "User motion graphics projects stored under the user UID boundary."
+    }
+  }
+}
